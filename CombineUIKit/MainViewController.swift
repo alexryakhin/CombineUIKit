@@ -6,10 +6,13 @@
 //
 
 import UIKit
+import Combine
 import SnapKit
 
 class MainViewController: UIViewControllerX {
     
+    let viewModel = MainViewModel()
+    var cancellable = Set<AnyCancellable>()
     let textField = UITextField()
     let clearButton = UIButtonX()
     let labelForText = UILabel()
@@ -18,6 +21,35 @@ class MainViewController: UIViewControllerX {
         super.viewDidLoad()
         addSubviews()
         setupView()
+        
+        // MARK: two consumers for the publisher
+        // so by that - every time when publisher has new value, it'll update text label
+        // that is one data stream
+        viewModel.$textSubject
+            .sink { [unowned self] value in
+                self.labelForText.text = value
+            }
+            .store(in: &cancellable) // cancellable will be dealoccated when vc's gone
+        
+        // then data stream to the text field
+        viewModel.$textSubject
+            .sink { [unowned self] value in
+                self.textField.text = value
+            }
+            .store(in: &cancellable)
+        
+        // MARK: update publisher's value
+        // then text field should send its new value each time
+        textField.textPublisher().sink { [unowned self] newValue in
+            self.viewModel.textSubject = newValue
+        }.store(in: &cancellable)
+        
+        // button action, which updates publisher's value as well
+        // button sends nothing, just registers a tap
+        clearButton.tapPublisher().sink { [unowned self] _ in
+            self.viewModel.textSubject = ""
+        }.store(in: &cancellable)
+        
     }
     
     func setupView() {
@@ -52,13 +84,14 @@ class MainViewController: UIViewControllerX {
     }
     
     func setupTextField() {
-        textField.borderStyle = .bezel
+        textField.borderStyle = .roundedRect
     }
     
     func setupLabel() {
         labelForText.text = "text"
         labelForText.font = .systemFont(ofSize: 20)
         labelForText.textColor = .red
+        labelForText.numberOfLines = 0
     }
     
 }
