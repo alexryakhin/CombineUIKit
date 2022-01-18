@@ -25,14 +25,14 @@ class MainViewController: UIViewControllerX {
         // MARK: two consumers for the publisher
         // so by that - every time when publisher has new value, it'll update text label
         // that is one data stream
-        viewModel.$textSubject
+        viewModel.textSubject
             .sink { [unowned self] value in
                 self.labelForText.text = value
             }
             .store(in: &cancellable) // cancellable will be dealoccated when vc's gone
         
         // then data stream to the text field
-        viewModel.$textSubject
+        viewModel.textSubject
             .sink { [unowned self] value in
                 self.textField.text = value
             }
@@ -41,13 +41,13 @@ class MainViewController: UIViewControllerX {
         // MARK: update publisher's value
         // then text field should send its new value each time
         textField.textPublisher().sink { [unowned self] newValue in
-            self.viewModel.textSubject = newValue
+            self.viewModel.textSubject.send(newValue)
         }.store(in: &cancellable)
         
         // button action, which updates publisher's value as well
         // button sends nothing, just registers a tap
         clearButton.tapPublisher().sink { [unowned self] _ in
-            self.viewModel.textSubject = ""
+            self.viewModel.textSubject.send("")
         }.store(in: &cancellable)
         
     }

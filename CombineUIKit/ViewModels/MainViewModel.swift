@@ -8,6 +8,5 @@
 import Combine
 
 final class MainViewModel: ObservableObject {
-//    let textSubject = CurrentValueSubject<String, Never>("Hello")
-    @Published var textSubject = "Hello"
+    let textSubject = CurrentValueSubject<String, Never>("Hello")
 }
