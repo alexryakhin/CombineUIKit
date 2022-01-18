@@ -16,12 +16,16 @@ final class MainViewController: UIViewControllerX {
     let textField = UITextField()
     let clearButton = UIButtonX()
     let labelForText = UILabel()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         addSubviews()
         setupView()
-        
+        setupConnections()
+        needToHideNavBar = false
+    }
+    
+    private func setupConnections() {
         // MARK: two consumers for the publisher
         // so by that - every time when publisher has new value, it'll update text label
         // that is one data stream
@@ -40,17 +44,21 @@ final class MainViewController: UIViewControllerX {
         
         // MARK: update publisher's value
         // then text field should send its new value each time
-        textField.textPublisher().sink { [unowned self] newValue in
-            self.viewModel.textSubject.send(newValue)
-        }.store(in: &cancellable)
+        textField
+            .textPublisher()
+            .sink { [unowned self] newValue in
+                self.viewModel.textSubject.send(newValue)
+            }
+            .store(in: &cancellable)
         
         // button action, which updates publisher's value as well
         // button sends nothing, just registers a tap
-        clearButton.tapPublisher().sink { [unowned self] _ in
-            self.viewModel.textSubject.send("")
-        }.store(in: &cancellable)
-        
-        needToHideNavBar = false
+        clearButton
+            .tapPublisher()
+            .sink { [unowned self] _ in
+                self.viewModel.textSubject.send("")
+            }
+            .store(in: &cancellable)
     }
     
     func setupView() {
