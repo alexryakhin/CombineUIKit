@@ -9,7 +9,7 @@ import UIKit
 import Combine
 import SnapKit
 
-class MainViewController: UIViewControllerX {
+final class MainViewController: UIViewControllerX {
     
     let viewModel = MainViewModel()
     var cancellable = Set<AnyCancellable>()
@@ -50,6 +50,7 @@ class MainViewController: UIViewControllerX {
             self.viewModel.textSubject.send("")
         }.store(in: &cancellable)
         
+        needToHideNavBar = false
     }
     
     func setupView() {
@@ -92,6 +93,10 @@ class MainViewController: UIViewControllerX {
         labelForText.font = .systemFont(ofSize: 20)
         labelForText.textColor = .red
         labelForText.numberOfLines = 0
+    }
+    
+    deinit {
+        print("deinit MainVC")
     }
     
 }
