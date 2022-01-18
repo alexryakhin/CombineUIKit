@@ -86,8 +86,7 @@ final class MainViewController: UIViewControllerX {
     }
     
     func setupClearButton() {
-        clearButton.setTitle("Clear", for: .normal)
-        clearButton.setImage(UIImage(systemName: "chevron.left"), for: .normal)
+        clearButton.setTitle("Clear text field", for: .normal)
         clearButton.setTitleColor(.tintColor, for: .normal)
         clearButton.setTitleColor(.blue, for: .highlighted)
     }
