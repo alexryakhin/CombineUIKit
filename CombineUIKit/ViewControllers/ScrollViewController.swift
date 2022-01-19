@@ -99,7 +99,7 @@ final class ScrollViewController: UIViewControllerX {
             if state.state == .willShow, let view = [textField1, textField2].first(where: { $0.isFirstResponder }) {
                 if view.frame.maxY > state.frame.minY {
                     let offset = CGPoint(x: 0, y: scrollView.frame.height - state.frame.height + inset * 2)
-                    scrollView.setContentOffset(offset , animated: true)
+                    scrollView.setContentOffset(offset, animated: true)
                 }
             }
             let offset = (state.isVisible) ? state.frame.height : 0

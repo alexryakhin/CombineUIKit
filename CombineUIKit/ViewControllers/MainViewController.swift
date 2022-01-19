@@ -92,6 +92,7 @@ final class MainViewController: UIViewControllerX {
     }
     
     private func setupTextField() {
+        textField.placeholder = "Enter text"
         textField.borderStyle = .roundedRect
     }
     
