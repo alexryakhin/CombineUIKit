@@ -19,13 +19,12 @@ final class MainViewController: UIViewControllerX {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        addSubviews()
         setupView()
-        setupConnections()
+        setupBinding()
         needToHideNavBar = false
     }
     
-    private func setupConnections() {
+    private func setupBinding() {
         // MARK: two consumers for the publisher
         // so by that - every time when publisher has new value, it'll update text label
         // that is one data stream
@@ -61,14 +60,15 @@ final class MainViewController: UIViewControllerX {
             .store(in: &cancellable)
     }
     
-    func setupView() {
+    private func setupView() {
+        addSubviews()
         view.backgroundColor = .white
         setupClearButton()
         setupTextField()
         setupLabel()
     }
     
-    func addSubviews() {
+    private func addSubviews() {
         [clearButton, textField, labelForText].forEach({ view.addSubview($0) })
         clearButton.snp.makeConstraints { make in
             make.centerX.centerY.equalToSuperview()
@@ -85,17 +85,17 @@ final class MainViewController: UIViewControllerX {
         }
     }
     
-    func setupClearButton() {
+    private func setupClearButton() {
         clearButton.setTitle("Clear text field", for: .normal)
         clearButton.setTitleColor(.tintColor, for: .normal)
         clearButton.setTitleColor(.blue, for: .highlighted)
     }
     
-    func setupTextField() {
+    private func setupTextField() {
         textField.borderStyle = .roundedRect
     }
     
-    func setupLabel() {
+    private func setupLabel() {
         labelForText.text = "text"
         labelForText.font = .systemFont(ofSize: 20)
         labelForText.textColor = .red

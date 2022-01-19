@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C031DB5E279803A300BA67C5 /* ScrollViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C031DB5D279803A300BA67C5 /* ScrollViewModel.swift */; };
 		C0C80EE927970E6A0031E4E0 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C80EE827970E6A0031E4E0 /* TabBarViewController.swift */; };
 		C0C80EEB27970EBB0031E4E0 /* SliderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C80EEA27970EBB0031E4E0 /* SliderViewController.swift */; };
 		C0C80EED27970ECA0031E4E0 /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C80EEC27970ECA0031E4E0 /* ScrollViewController.swift */; };
@@ -32,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C031DB5D279803A300BA67C5 /* ScrollViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewModel.swift; sourceTree = "<group>"; };
 		C0C80EE827970E6A0031E4E0 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		C0C80EEA27970EBB0031E4E0 /* SliderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderViewController.swift; sourceTree = "<group>"; };
 		C0C80EEC27970ECA0031E4E0 /* ScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 			children = (
 				C0F4EFE62797039E0030A4B5 /* MainViewModel.swift */,
 				C0C80EF0279716DE0031E4E0 /* SliderViewModel.swift */,
+				C031DB5D279803A300BA67C5 /* ScrollViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 				C0F4EFCA2796BD1E0030A4B5 /* UIViewX.swift in Sources */,
 				C0C80EEB27970EBB0031E4E0 /* SliderViewController.swift in Sources */,
 				C0F4EFCE2796C0530030A4B5 /* UIButtonX.swift in Sources */,
+				C031DB5E279803A300BA67C5 /* ScrollViewModel.swift in Sources */,
 				C0F4EFE72797039E0030A4B5 /* MainViewModel.swift in Sources */,
 				C0F4EFE1279702FE0030A4B5 /* UIScrollView+Publisher.swift in Sources */,
 				C0F4EFE4279702FE0030A4B5 /* UIControl+Publisher.swift in Sources */,

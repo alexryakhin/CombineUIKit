@@ -18,13 +18,13 @@ final class SliderViewController: UIViewControllerX {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        addSubviews()
         setupView()
-        setupConnections()
+        setupBinding()
         needToHideNavBar = false
     }
     
-    func setupConnections() {
+    private func setupBinding() {
+        // two-way binding (slider sends its new value to the viewModel publisher, and takes it, if it changes)
         slider
             .createBinding(with: viewModel.currentSliderValue, storeIn: &cancellable)
         
@@ -44,13 +44,14 @@ final class SliderViewController: UIViewControllerX {
             .store(in: &cancellable)
     }
     
-    func setupView() {
+    private func setupView() {
+        addSubviews()
         view.backgroundColor = .white
         setupClearButton()
         setupLabel()
     }
     
-    func addSubviews() {
+    private func addSubviews() {
         [clearButton, slider, labelForText].forEach({ view.addSubview($0) })
         clearButton.snp.makeConstraints { make in
             make.centerX.centerY.equalToSuperview()
@@ -67,13 +68,13 @@ final class SliderViewController: UIViewControllerX {
         }
     }
     
-    func setupClearButton() {
+    private func setupClearButton() {
         clearButton.setTitle("Set to zero", for: .normal)
         clearButton.setTitleColor(.tintColor, for: .normal)
         clearButton.setTitleColor(.blue, for: .highlighted)
     }
     
-    func setupLabel() {
+    private func setupLabel() {
         labelForText.text = "text"
         labelForText.font = .systemFont(ofSize: 20)
         labelForText.textColor = .red
