@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C0177428279831B7003D50F9 /* CombineCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = C0177427279831B7003D50F9 /* CombineCocoa */; };
 		C031DB5E279803A300BA67C5 /* ScrollViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C031DB5D279803A300BA67C5 /* ScrollViewModel.swift */; };
+		C064AE17279EFF430071AD82 /* CombineDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = C064AE16279EFF430071AD82 /* CombineDataSources */; };
+		C064AE19279EFF850071AD82 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C064AE18279EFF850071AD82 /* ListViewController.swift */; };
+		C064AE1B279F00D60071AD82 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C064AE1A279F00D60071AD82 /* NetworkManager.swift */; };
+		C064AE1D279F01DB0071AD82 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C064AE1C279F01DB0071AD82 /* ListViewModel.swift */; };
 		C0C80EE927970E6A0031E4E0 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C80EE827970E6A0031E4E0 /* TabBarViewController.swift */; };
 		C0C80EEB27970EBB0031E4E0 /* SliderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C80EEA27970EBB0031E4E0 /* SliderViewController.swift */; };
 		C0C80EED27970ECA0031E4E0 /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C80EEC27970ECA0031E4E0 /* ScrollViewController.swift */; };
@@ -34,6 +39,9 @@
 
 /* Begin PBXFileReference section */
 		C031DB5D279803A300BA67C5 /* ScrollViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewModel.swift; sourceTree = "<group>"; };
+		C064AE18279EFF850071AD82 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		C064AE1A279F00D60071AD82 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		C064AE1C279F01DB0071AD82 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		C0C80EE827970E6A0031E4E0 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		C0C80EEA27970EBB0031E4E0 /* SliderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderViewController.swift; sourceTree = "<group>"; };
 		C0C80EEC27970ECA0031E4E0 /* ScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
@@ -64,7 +72,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0177428279831B7003D50F9 /* CombineCocoa in Frameworks */,
 				C0F4EFC42796B9A40030A4B5 /* SnapKit in Frameworks */,
+				C064AE17279EFF430071AD82 /* CombineDataSources in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +88,7 @@
 				C0F4EFB22796B82D0030A4B5 /* MainViewController.swift */,
 				C0C80EEA27970EBB0031E4E0 /* SliderViewController.swift */,
 				C0C80EEC27970ECA0031E4E0 /* ScrollViewController.swift */,
+				C064AE18279EFF850071AD82 /* ListViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -109,6 +120,7 @@
 				C0F4EFB72796B82E0030A4B5 /* Assets.xcassets */,
 				C0F4EFB92796B82E0030A4B5 /* LaunchScreen.storyboard */,
 				C0F4EFBC2796B82E0030A4B5 /* Info.plist */,
+				C064AE1A279F00D60071AD82 /* NetworkManager.swift */,
 			);
 			path = CombineUIKit;
 			sourceTree = "<group>";
@@ -145,6 +157,7 @@
 				C0F4EFE62797039E0030A4B5 /* MainViewModel.swift */,
 				C0C80EF0279716DE0031E4E0 /* SliderViewModel.swift */,
 				C031DB5D279803A300BA67C5 /* ScrollViewModel.swift */,
+				C064AE1C279F01DB0071AD82 /* ListViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -167,6 +180,8 @@
 			name = CombineUIKit;
 			packageProductDependencies = (
 				C0F4EFC32796B9A40030A4B5 /* SnapKit */,
+				C0177427279831B7003D50F9 /* CombineCocoa */,
+				C064AE16279EFF430071AD82 /* CombineDataSources */,
 			);
 			productName = CombineUIKit;
 			productReference = C0F4EFAB2796B82D0030A4B5 /* CombineUIKit.app */;
@@ -198,6 +213,8 @@
 			mainGroup = C0F4EFA22796B82D0030A4B5;
 			packageReferences = (
 				C0F4EFC22796B9A40030A4B5 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				C0177426279831B7003D50F9 /* XCRemoteSwiftPackageReference "CombineCocoa" */,
+				C064AE15279EFF430071AD82 /* XCRemoteSwiftPackageReference "CombineDataSources" */,
 			);
 			productRefGroup = C0F4EFAC2796B82D0030A4B5 /* Products */;
 			projectDirPath = "";
@@ -229,6 +246,7 @@
 				C0F4EFC62796BC030030A4B5 /* UIViewControllerX.swift in Sources */,
 				C0F4EFB32796B82D0030A4B5 /* MainViewController.swift in Sources */,
 				C0F4EFE0279702FE0030A4B5 /* UIButton+Publisher.swift in Sources */,
+				C064AE1B279F00D60071AD82 /* NetworkManager.swift in Sources */,
 				C0F4EFCA2796BD1E0030A4B5 /* UIViewX.swift in Sources */,
 				C0C80EEB27970EBB0031E4E0 /* SliderViewController.swift in Sources */,
 				C0F4EFCE2796C0530030A4B5 /* UIButtonX.swift in Sources */,
@@ -244,7 +262,9 @@
 				C0F4EFE2279702FE0030A4B5 /* UISlider+Publisher.swift in Sources */,
 				C0F4EFDF279702FE0030A4B5 /* UIKeyboard publisher.swift in Sources */,
 				C0F4EFCC2796BD450030A4B5 /* AlertView.swift in Sources */,
+				C064AE1D279F01DB0071AD82 /* ListViewModel.swift in Sources */,
 				C0C80EF1279716DE0031E4E0 /* SliderViewModel.swift in Sources */,
+				C064AE19279EFF850071AD82 /* ListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,6 +476,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		C0177426279831B7003D50F9 /* XCRemoteSwiftPackageReference "CombineCocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CombineCommunity/CombineCocoa";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.4.0;
+			};
+		};
+		C064AE15279EFF430071AD82 /* XCRemoteSwiftPackageReference "CombineDataSources" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CombineCommunity/CombineDataSources";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.5;
+			};
+		};
 		C0F4EFC22796B9A40030A4B5 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
@@ -467,6 +503,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		C0177427279831B7003D50F9 /* CombineCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C0177426279831B7003D50F9 /* XCRemoteSwiftPackageReference "CombineCocoa" */;
+			productName = CombineCocoa;
+		};
+		C064AE16279EFF430071AD82 /* CombineDataSources */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C064AE15279EFF430071AD82 /* XCRemoteSwiftPackageReference "CombineDataSources" */;
+			productName = CombineDataSources;
+		};
 		C0F4EFC32796B9A40030A4B5 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C0F4EFC22796B9A40030A4B5 /* XCRemoteSwiftPackageReference "SnapKit" */;

@@ -29,6 +29,7 @@ final class MainViewController: UIViewControllerX {
         // so by that - every time when publisher has new value, it'll update text label
         // that is one data stream
         viewModel.textSubject
+//            .assign(to: \.text , on: labelForText)
             .sink { [unowned self] value in
                 self.labelForText.text = value
             }
